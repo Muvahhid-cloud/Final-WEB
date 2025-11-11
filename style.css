@@ -1,0 +1,240 @@
+body {
+  font-family: "Poppins", sans-serif;
+  margin: 0;
+  background: #f8f5f1;
+  color: #333;
+  transition: background 0.3s, color 0.3s;
+}
+
+/* Header */
+header {
+  background: #3e2723;
+  color: white;
+  text-align: center;
+  padding: 1rem 0;
+}
+
+nav ul {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.3s;
+}
+
+nav a:hover,
+nav a.active {
+  color: gold;
+}
+
+/* Carousel */
+#carouselImg {
+  width: 100%;
+  height: 450px;
+  object-fit: cover;
+  border-radius: 0;
+  display: block;
+  margin: 0 auto 1.5rem;
+  transition: transform 1s ease-in-out, opacity 0.6s;
+}
+
+/* Sections */
+section {
+  padding: 2rem;
+  text-align: center;
+}
+
+/* Home Cards */
+.card-container {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+  margin-top: 2rem;
+}
+
+.card {
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  width: 300px;
+  padding: 1rem;
+  transition: transform 0.3s ease;
+}
+.card:hover {
+  transform: translateY(-6px);
+}
+.card img {
+  width: 100%;
+  height: 200px;
+  border-radius: 8px;
+  object-fit: cover;
+}
+
+/* Menu Grid */
+.menu-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  justify-content: center;
+}
+
+.menu-card {
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  width: 260px;
+  padding-bottom: 1rem;
+  transition: transform 0.3s;
+  overflow: hidden;
+}
+.menu-card:hover {
+  transform: translateY(-6px);
+}
+.menu-card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+.menu-card h3 {
+  margin: 0.5rem 0 0.2rem;
+}
+.menu-card p {
+  color: #6f4e37;
+  font-weight: bold;
+}
+
+/* Buttons */
+button, .order-btn {
+  background: #6f4e37;
+  color: white;
+  border: none;
+  padding: 0.6rem 1rem;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+button:hover {
+  background: #5b3825;
+}
+
+/* About */
+.about {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 2rem;
+  justify-content: center;
+}
+.about img {
+  width: 45%;
+  border-radius: 10px;
+}
+
+/* Contact */
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  max-width: 400px;
+  margin: auto;
+}
+input, textarea {
+  padding: 0.7rem;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-family: inherit;
+}
+
+/* Footer */
+footer {
+  background: #3e2723;
+  color: white;
+  text-align: center;
+  padding: 1rem;
+  margin-top: 2rem;
+}
+
+/* Dark Theme */
+.dark-theme {
+  background: #1e1e1e;
+  color: #eee;
+}
+.dark-theme header, .dark-theme footer {
+  background: #000;
+}
+.dark-theme .menu-card,
+.dark-theme .card {
+  background: #2c2c2c;
+  color: white;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .menu-card, .card {
+    width: 90%;
+  }
+  .about img {
+    width: 90%;
+  }
+}
+
+.search-input {
+  padding: 8px;
+  width: 50%;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  margin-bottom: 20px;
+}
+
+
+/* Menu Price color fix for Dark Theme */
+.dark-theme .menu-card p {
+  color: #fff3cd; /* soft yellow for dark mode */
+}
+
+/* Add space between image and text in home cards */
+.card img {
+  margin-bottom: 10px;
+}
+
+
+/* --- Dark Mode Search Fixes --- */
+
+/* Highlighted search text in dark mode */
+.dark-theme span[style*='background:yellow'] {
+  background: #dc3545 !important; /* red highlight */
+  color: #fff !important;         /* white text for contrast */
+}
+
+/* Suggestion box styling in dark mode */
+.dark-theme #suggestions li {
+  background: #000 !important;    /* black background */
+  color: #fff !important;         /* white text */
+  border-color: #dc3545 !important;
+}
+
+#greeting {
+  color: #6f4e37; /* normal text color */
+  transition: color 0.3s ease;
+}
+
+.dark-theme #greeting {
+  color: #fff3cd; /* soft yellow in dark mode */
+}
+
+#cartPanel h3 {
+  text-align: center;
+  margin-bottom: 15px;
+  color: #6f4e37;
+}
+#cartItems li button {
+  margin: 0 3px;
+}

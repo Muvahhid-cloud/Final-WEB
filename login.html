@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Buzz Café — Login</title>
+  <style>
+    body {
+      background: url('images/vecteezy_cup-of-coffee-latte-tree-shape-and-coffee-beans-on-old_28533635.jpeg') center/cover no-repeat;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-family: 'Poppins', sans-serif;
+    }
+    .login-box {
+      background: rgba(255, 255, 255, 0.92);
+      padding: 40px;
+      border-radius: 15px;
+      width: 350px;
+      text-align: center;
+      box-shadow: 0 8px 25px rgba(0,0,0,0.3);
+    }
+    .login-box h2 {
+      color: #4b2c20;
+      margin-bottom: 20px;
+    }
+    input {
+      width: 100%;
+      padding: 10px;
+      margin: 10px 0;
+      border-radius: 8px;
+      border: 1px solid #ccc;
+    }
+    button {
+      width: 100%;
+      padding: 10px;
+      border-radius: 8px;
+      border: none;
+      background-color: #6f4e37;
+      color: white;
+      cursor: pointer;
+      font-weight: 600;
+    }
+    button:hover {
+      background-color: #563826;
+    }
+    p {
+      margin-top: 10px;
+    }
+    #loginMessage {
+      margin-top: 10px;
+    }
+  </style>
+</head>
+<body>
+  <div class="login-box">
+    <h2>Welcome Back!</h2>
+    <form id="loginForm">
+      <input type="email" id="email" placeholder="Email" required>
+      <input type="password" id="password" placeholder="Password" required>
+      <button type="submit">Log In</button>
+    </form>
+    <p>Don't have an account? <a href="signup.html">Sign Up</a></p>
+    <p id="loginMessage"></p>
+  </div>
+
+  <script>
+    document.getElementById("loginForm").addEventListener("submit", function(e){
+      e.preventDefault();
+
+      const email = document.getElementById("email").value;
+      const password = document.getElementById("password").value;
+      const loginMessage = document.getElementById("loginMessage");
+
+      const users = JSON.parse(localStorage.getItem("users")) || {};
+
+      if (!users[email]) {
+        loginMessage.style.color = "red";
+        loginMessage.textContent = "⚠️ No account found!";
+        return;
+      }
+
+      if (users[email].password !== password) {
+        loginMessage.style.color = "red";
+        loginMessage.textContent = "❌ Incorrect password!";
+        return;
+      }
+
+      // ✅ Successful login
+      localStorage.setItem("loggedInUser", email);
+      loginMessage.style.color = "green";
+      loginMessage.textContent = "✅ Login successful! Redirecting...";
+
+      setTimeout(() => {
+        window.location.href = "index.html"; // enter the site
+      }, 1000);
+    });
+
+    // Redirect to login if already logged in?
+    if(localStorage.getItem("loggedInUser")) {
+      window.location.href = "index.html";
+    }
+  </script>
+</body>
+</html>

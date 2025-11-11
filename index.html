@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>☕ Buzz Café - Home</title>
+
+  <!-- ✅ Bootstrap Added -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header style="position: relative; padding: 1rem;">
+    <h1>☕ Buzz Café</h1>
+    <nav>
+      <ul>
+        <li><a href="index.html" class="active">Home</a></li>
+        <li><a href="menu.html">Menu</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+
+   
+  <!-- ✅ User Greeting and Logout stacked on left -->
+  <div style="position:absolute; top:10px; left:10px; display:flex; flex-direction: column; align-items:flex-start; gap:5px;">
+    <div id="userGreeting" style="background:#ddff00; color:rgb(30, 28, 28); padding:6px 12px; border-radius:8px; font-weight:bold; font-size:1.1em;"></div>
+    <button id="logoutBtn" style="padding:6px 12px; border:none; border-radius:5px; cursor:pointer; background:#eb1818; color:white;">Logout</button>
+  </div>
+  </header>
+
+  <!-- ✅ Wrapped in Bootstrap Container -->
+  <section id="carousel" class="container">
+    <img id="carouselImg" src="images/22.jpg" alt="Coffee" class="img-fluid rounded" />
+  </section>
+
+  <section class="cards container">
+    <h2>Our Special Brews</h2>
+    <div class="card-container">
+
+      <div class="card">
+        <img class="lazy" src="https://via.placeholder.com/300x200?text=Loading..." data-src="images/espresso.jpeg" alt="Espresso">
+        <h3>Espresso</h3>
+        <p>Strong and bold Italian classic.</p>
+      </div>
+
+      <div class="card">
+        <img class="lazy" src="https://via.placeholder.com/300x200?text=Loading..." data-src="images/lattes.jpeg" alt="Latte">
+        <h3>Latte</h3>
+        <p>Perfect balance of milk and coffee.</p>
+      </div>
+
+      <div class="card">
+        <img class="lazy" src="https://via.placeholder.com/300x200?text=Loading..." data-src="images/capucino.jpeg" alt="Cappuccino">
+        <h3>Cappuccino</h3>
+        <p>Creamy and smooth favorite.</p>
+      </div>
+
+    </div>
+  </section>
+
+  <footer>
+    Team: Coffee Brew | Members: Zainiddin Tursunaliev, Esanjon Usmanov
+  </footer>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
